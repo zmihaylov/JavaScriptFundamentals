@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+    <script src="arrays.js"></script>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>
+                Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
+                <br />
+                <button onclick="getArray()">Print array</button>
+                <p id="multiplyIndexBy5"></p>
+            </li>
+            <li>
+                Write a script that compares two char arrays lexicographically (letter by letter).
+                <br />
+                <label for="arrayOne">Enter first array</label>
+                <input id="arrayOne" type="text" placeholder="Example: a, b, c, d, e, f" />
+                <label for="arrayTwo">Enter first array</label>
+                <input id="arrayTwo" type="text" placeholder="Example: A, b, E, Q, r, z" />
+                <button onclick="compareLexicog()">Press to compare</button>
+                <p id="compareResult"></p>
+            </li>
+            <li>
+                Write a script that finds the maximal sequence of equal elements in an array. Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.
+                <br />
+                <label for="enteredArray">Enter array</label>
+                <input id="enteredArray" type="text" placeholder="Example: 2, 1, 1, 2, 3, 3, 2, 2, 2, 1" />
+                <button onclick="findLongestSequence()">Longest sequence</button>
+                <p id="longestSequence"></p>
+            </li>
+            <li>
+                Write a script that finds the maximal increasing sequence in an array. Example: {3, 2, 3, 4, 2, 2, 4}  {2, 3, 4}.
+                <br />
+                <label for="enterToFind">Enter array:</label>
+                <input id="enterToFind" type="text" placeholder="Example: 3, 2, 3, 4, 2, 2, 4" />
+                <button onclick="findMaxIncreasingSeq()">Find longest increasing</button>
+                <p id="printLongestIncreasing"></p>
+            </li>
+            <li>
+                Sorting an array means to arrange its elements in increasing order. Write a script to sort an array. Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.Hint: Use a second array.
+                <br />
+                <label for="enterToUseSelectionSort">Enter array:</label>
+                <input id="enterToUseSelectionSort" type="text" placeholder="Example 2, 1, 1, 2, 3, 3, 2, 2, 2, 1" />
+                <button onclick="sortArray()">Press to sort</button>
+                <p id="sortedArray"></p>
+            </li>
+            <li>
+                Write a program that finds the most frequent number in an array.
+                <br />
+                <label for="frequent">Enter array</label>
+                <input id="frequent" type="text" placeholder="Example: 4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3" />
+                <button onclick="findMostFrequent()">Press to find most frequent</button>
+                <p id="printMostFrequent"></p>
+            </li>
+            <li>
+                Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm (find it in Wikipedia).
+                <br />
+                <label for="arrayToPerformBinary">Enter array:</label>
+                <input id="arrayToPerformBinary" type="text" placeholder="Example: 4, 1, 1, 4, 2" />
+                <label for="searchedValue">Enter searched value:</label>
+                <input id="searchedValue" type="number" />
+                <button onclick="findElement()">Find Index</button>
+                <p id="foundElement"></p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
