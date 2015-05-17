@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+
+    <script src="conditional-statements.js"></script>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>
+                Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+                <br />
+                <label for="firstNumber">Enter first number</label>
+                <input id="firstNumber" type="number" />
+                <label for="secondNumber">Enter second number</label>
+                <input id="secondNumber" type="number" />
+                <button onclick="compareNumbers()">Press to comapre</button>
+                <p id="compareResult"></p>
+            </li>
+            <li>
+                Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+                <br />
+                <label for="firstSign">Enter first number</label>
+                <input id="firstSign" type="number" />
+                <label for="secondSign">Enter second number</label>
+                <input id="secondSign" type="number" />
+                <label for="thirdSign">Enter third number</label>
+                <input id="thirdSign" type="number" />
+                <button onclick="findSign()">Check the sign</button>
+                <p id="signResult"></p>
+            </li>
+            <li>
+                Write a script that finds the biggest of three integers using nested if statements.
+                <br />
+                <label for="one">Enter first number</label>
+                <input id="one" type="number" />
+                <label for="two">Enter second number</label>
+                <input id="two" type="number" />
+                <label for="three">Enter third number</label>
+                <input id="three" type="number" />
+                <button onclick="findBiggest()">Find biggest</button>
+                <p id="biggestResult"></p>
+            </li>
+            <li>
+                Sort 3 real values in descending order using nested if statements.
+                <br />
+                <label for="firstToSort">Enter first number</label>
+                <input id="firstToSort" type="number" />
+                <label for="secondToSort">Enter second number</label>
+                <input id="secondToSort" type="number" />
+                <label for="thirdToSort">Enter third number</label>
+                <input id="thirdToSort" type="number" />
+                <button onclick="sortNumbers()">Sort numbers</button>
+                <p id="sortedNumbers"></p>
+            </li>
+            <li>
+                Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+                <br />
+                <label for="digit">Enter digit</label>
+                <input id="digit" type="number" />
+                <button onclick="digitName()">Enter digit</button>
+                <p id="digitname"></p>
+            </li>
+            <li>
+                Write a script that enters the coefficients a, b and c of a quadratic equation a*x2 + b*x + c = 0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+                <label for="coeffA">Enter a</label>
+                <input id="coeffA" type="number" />
+                <label for="coeffB">Enter b</label>
+                <input id="coeffB" type="number" />
+                <label for="coeffC">Enter c</label>
+                <input id="coeffC" type="number" />
+                <button onclick="findRoots()">Find roots</button>
+                <p id="roots"></p>
+            </li>
+            <li>
+                Write a script that finds the greatest of given 5 variables.
+                <br />
+                <label for="varOne">Enter first variable</label>
+                <input id="varOne" type="number" />
+                <label for="varTwo">Enter second variable</label>
+                <input id="varTwo" type="number" />
+                <label for="varThree">Enter third variable</label>
+                <input id="varThree" type="number" />
+                <label for="varFour">Enter four variable</label>
+                <input id="varFour" type="number" />
+                <label for="varFive">Enter five variable</label>
+                <input id="varFive" type="number" />
+                <button onclick="findGreates()">Find Greatest</button>
+                <p id="greatestResult"></p>
+            </li>
+            <li>
+                Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
+                <br />
+                <label for="numberToConvert">Enter number to conver</label>
+                <input id="numberToConvert" type="number" />
+                <button onclick="convertNumber()">Press to convert</button>
+                <p id="convertedNumber"></p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
