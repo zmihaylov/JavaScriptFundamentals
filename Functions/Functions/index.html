@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>
+                Write a function that returns the last digit of given integer as an English word.
+                <br />
+                <label for="lastDigitOfNumber">Enter number</label>
+                <input id="lastDigitOfNumber" type="number" />
+                <button onclick="getLastDigitName()">Last digit as word</button>
+                <p id="lastDigit"></p>
+            </li>
+            <li>
+                Write a function that reverses the digits of given decimal number. Example: 256  652.
+                <br />
+                <label for="originalNumber">Enter number to reverse</label>
+                <input id="originalNumber" type="number" />
+                <button onclick="reverseNumber()">Reverse number</button>
+                <p id="reversedNumber"></p>
+            </li>
+            <li>
+                Write a function that finds all the occurrences of word in a text
+                <ul>
+                    <li>The search can be case sensitive or case insensitive </li>
+                    <li>Use function overloading</li>
+                </ul>
+                <textarea id="inputText" placeholder="Enter text"></textarea>
+                <label for="word">Search for:</label>
+                <input id="word" type="text" />
+                <label for="caseOn">Case sensitive</label>
+                <input id="caseOn" type="radio" name="choice" value="On" checked="checked" />
+                <label for="caseOff">Case insensitive</label>
+                <input id="caseOff" type="radio" name="choice" value="Off" />
+                <button onclick="getWordCount()">Get word count</button>
+                <p id="resultCount"></p>
+            </li>
+            <li>
+                Write a function to count the number of divs on the web page.
+                <br />
+                <button onclick="countDivElements()">Count Div elements</button>
+                <button onclick="createNewDivElement()">Create new div</button>
+                <button onclick="deleteDivElement()">Delete div</button>
+                <div id="divContainer"></div>
+                <p id="divElementsCount"></p>
+            </li>
+            <li>
+                Write a function that counts how many times given number appears in given array. Write a test function to check if the function is working correctly.
+                <br />
+                <label for="arrayOfNumbers">Enter array of numbers:</label>
+                <input id="arrayOfNumbers" type="text" />
+                <label for="enteredNumber">Enter number: </label>
+                <input id="enteredNumber" type="number" />
+                <button onclick="getNumberOccurrences()"> Count number occurrences </button>
+                <button onclick="testGetNumOccurances()"> Test function </button>
+                <p id="numberOccurences"></p>
+                <p id="testResult"></p>
+            </li>
+            <li>
+                Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).
+                <br />
+                <label for="givenArray">Enter array of numbers:</label>
+                <input id="givenArray" type="text" />
+                <label for="givenPosition">Enter index of element: </label>
+                <input id="givenPosition" type="number" />
+                <button onclick="checkPositionNeighbours()"> Is Element Bigger? </button>
+                <p id="biggerElement"></p>
+            </li>
+            <li>
+                Write a function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.
+                <ul><li> Use the function from the previous exercise.</li></ul>
+                <label for="inputArray">Enter array of numbers:</label>
+                <input id="inputArray" type="text" />
+                <button onclick="findFirstBiggerElement()"> Find First Number </button>
+                <p id="firstBiggerNumber"></p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
