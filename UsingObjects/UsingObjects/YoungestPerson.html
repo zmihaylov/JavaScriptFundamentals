@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="generate-people.js"></script>
+</head>
+<body>
+    <script>
+        (function () {
+            var people = generatePeople(),
+                youngestPerson = people[0],
+                oldestPerson = people[0];
+
+            for (var i = 1; i < people.length; i++) {
+                
+                if (youngestPerson.age > people[i].age) {
+                    youngestPerson = people[i];
+                }
+            }
+
+            console.log(youngestPerson.first + ' ' + youngestPerson.last + ' - ' + youngestPerson.age);
+
+        })();
+    </script>
+</body>
+</html>

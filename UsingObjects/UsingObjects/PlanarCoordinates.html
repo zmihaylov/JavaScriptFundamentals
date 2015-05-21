@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <button id="reset" onclick="location.reload()">RESET</button> <br />
+    <div>Line 1</div>
+    <input id="x1" type="text" placeholder="x1" autofocus="autofocus" />
+    <input id="y1" type="text" placeholder="y1" />
+    <input id="x2" type="text" placeholder="x2" />
+    <input id="y2" type="text" placeholder="y2" />
+    <button onclick="getDistance(1)">Get distance</button>
+    <span id="resultOne"></span>
+    <div>Line 2</div>
+    <input id="x3" type="text" placeholder="x3" />
+    <input id="y3" type="text" placeholder="y3" />
+    <input id="x4" type="text" placeholder="x4" />
+    <input id="y4" type="text" placeholder="y4" />
+    <button onclick="getDistance(2)">Get distance</button>
+    <span id="resultTwo"></span>
+    <div>Line 3</div>
+    <input id="x5" type="text" placeholder="x5" />
+    <input id="y5" type="text" placeholder="y5" />
+    <input id="x6" type="text" placeholder="x6" />
+    <input id="y6" type="text" placeholder="y6" />
+    <button onclick="getDistance(3)">Get distance</button>
+    <span id="resultThree"></span>
+    <br />
+    <button id="specialButton" onclick="canWeMakeTriangle()">Can we make a triangle?</button>
+    <script>
+        var points = [];
+
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        function getDistanceFromTwoPoints(firstPoint, secondPoint) {
+            return Math.sqrt((firstPoint.x - secondPoint.x) * (firstPoint.x - secondPoint.x) +
+                             (firstPoint.y - secondPoint.y) * (firstPoint.y - secondPoint.y));
+        }
+
+        function getPoints() {
+            var inputs = document.getElementsByTagName('input'),
+                newPoints = [];
+
+            for (var i = 0; i < inputs.length / 2 ; i++) {
+                var currentX = parseFloat(inputs[i * 2].value);
+                var currentY = parseFloat(inputs[i * 2 + 1].value);
+                newPoints.push(new Point(currentX, currentY));
+            }
+
+            return newPoints;
+        }
+
+        function canWeMakeTriangle() {
+            points = getPoints();
+            var firstLine = getDistanceFromTwoPoints(points[0], points[1]),
+                secondLine = getDistanceFromTwoPoints(points[2], points[3]),
+                thirdLine = getDistanceFromTwoPoints(points[4], points[5]),
+                trianglePossible = (firstLine + secondLine > thirdLine) &&
+                                   (firstLine + thirdLine > secondLine) &&
+                                   (secondLine + thirdLine > firstLine);
+
+            if (trianglePossible) {
+                document.getElementById('specialButton').innerHTML = 'Yes we can!';
+            }
+            else {
+                document.getElementById('specialButton').innerHTML = 'No we can not!';
+            }
+        }
+
+        function getDistance(button) {
+            var distance;
+
+            points = getPoints();
+
+            switch (button) {
+                case 1:
+                    distance = getDistanceFromTwoPoints(points[0], points[1]);
+                    document.getElementById('resultOne').innerHTML = 'Distance is ' + distance;
+                    break;
+                case 2:
+                    distance = getDistanceFromTwoPoints(points[2], points[3]);
+                    document.getElementById('resultTwo').innerHTML = 'Distance is ' + distance;
+                    break;
+                case 3:
+                    distance = getDistanceFromTwoPoints(points[4], points[5]);
+                    document.getElementById('resultThree').innerHTML = 'Distance is ' + distance;
+                    break;
+            }
+
+        }
+    </script>
+</body>
+</html>

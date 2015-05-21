@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        (function () {
+            function deepCopy(obj) {
+                return JSON.parse(JSON.stringify(obj));
+            }
+
+            // from here to the end is to check if it works right
+
+            var pesho = {
+                name: 'Pesho',
+                age: 25,
+                someProperties: { firstProp: 12, secondProp: 24 },
+            };
+
+            var copy = deepCopy(pesho);
+
+            console.log(pesho.name + " " + pesho.age + " " + pesho.someProperties.firstProp + " " + pesho.someProperties.secondProp);
+            console.log(copy.name + " " + copy.age + " " + copy.someProperties.firstProp + " " + copy.someProperties.secondProp);
+
+            copy.name = 'Golemc';
+            copy.age = 20;
+            copy.someProperties.firstProp = 15;
+            copy.someProperties.secondProp = 25;
+
+            console.log('---------------------------------');
+            console.log(pesho.name + " " + pesho.age + " " + pesho.someProperties.firstProp + " " + pesho.someProperties.secondProp);
+            console.log(copy.name + " " + copy.age + " " + copy.someProperties.firstProp + " " + copy.someProperties.secondProp);
+        })();
+    </script>
+</body>
+</html>

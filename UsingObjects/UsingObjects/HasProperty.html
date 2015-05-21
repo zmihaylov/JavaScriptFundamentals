@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        (function () {
+            function checkForProperty(obj, prop) {
+                if (obj[prop]) {
+                    console.log('Contains property');
+                }
+                else {
+                    console.log('Does not contain prop!');
+                }
+            }
+
+            var obj = {
+                name: 'Misho',
+                lastName: 'Shamara',
+                job: 'Rapper'
+            };
+
+            checkForProperty(obj, 'job');
+            checkForProperty(obj, 'age');
+        })();
+    </script>
+</body>
+</html>

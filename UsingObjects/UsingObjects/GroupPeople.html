@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="generate-people.js"></script>
+</head>
+<body>
+    <script>
+        (function () {
+            var people = generatePeople();
+
+            function groupPeople(arr, key) {
+
+                if (!arr.length) {
+                    return undefined;
+                }
+
+                var groupedPeople = {};
+
+                for (var i = 0; i < arr.length; i++) {
+                    var currentPerson = arr[i];
+
+                    if (!groupedPeople[currentPerson[key]]) {
+                        groupedPeople[currentPerson[key]] = [];
+                    }
+
+                    groupedPeople[currentPerson[key]].push(currentPerson);
+                }
+
+                return groupedPeople;
+            }
+
+            var groupByAge = groupPeople(people, 'age');
+            var groupByFirstName = groupPeople(people, 'first');
+            var groupByLastName = groupPeople(people, 'last');
+
+            console.log(groupByAge);
+            console.log(groupByFirstName);
+            console.log(groupByLastName);
+        })();
+    </script>
+</body>
+</html>
