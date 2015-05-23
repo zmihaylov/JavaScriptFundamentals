@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="text" style="width:500px;height:150px" placeholder="Enter text"></textarea>
+<br />
+<button onclick="getInputAndResult()">See result</button>
+<div id="result"></div>
+<script>
+    function getInputAndResult() {
+        var text = document.getElementById('text').value,
+                result = extractHTML(text);
+
+        document.getElementById('result').innerHTML = result;
+    }
+
+    function extractHTML(text) {
+        var result = '',
+            inTag = false;
+
+        for(var i = 0, length = text.length; i < length; i++) {
+
+            if(text[i] === '<') {
+                inTag = true;
+                continue;
+            }
+
+            if(text[i] === '>') {
+                inTag = false;
+                continue;
+            }
+
+            if(!inTag) {
+                result += text[i];
+            }
+        }
+
+        return result;
+    }
+</script>
+</body>
+</html>

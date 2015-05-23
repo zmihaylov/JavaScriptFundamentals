@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (function () {
+        var sampleText = "We are living in an yellow submarine. " +
+                "We don't have anything else. " +
+                "inside the submarine is very tight. " +
+                "So we are drinking all the day. " +
+                "We will move out of it in 5 days.";
+        var searchedWord = 'in';
+
+        function getCountOfWord(text,word) {
+            var count = 0;
+            var index = text.indexOf(word)
+
+            text = text.toLowerCase();
+            word = word.toLowerCase();
+
+            while(index >= 0) {
+                count++;
+                index = text.indexOf(word,index + 1);
+            }
+
+            return count;
+        }
+
+        console.log(getCountOfWord(sampleText,searchedWord));
+    })();
+</script>
+</body>
+</html>

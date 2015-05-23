@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="text" style="width:500px;height:150px" placeholder="Enter text"></textarea>
+<br />
+<button onclick="getInputAndResult()">See result</button>
+<div id="result"></div>
+<script>
+    function getInputAndResult() {
+        var text = document.getElementById('text').value,
+                emails = getEmails(text);
+
+        if (!emails.length) {
+            document.getElementById('result').innerHTML = "No emails found";
+            return;
+        }
+
+
+        document.getElementById('result').innerHTML = emails.join(' | ');
+    }
+
+    function getEmails(emails) {
+        var reg = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
+        return emails.match(reg);
+    }
+</script>
+</body>
+</html>

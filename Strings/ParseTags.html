@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="text" style="width:500px;height:150px" placeholder="Enter text"></textarea>
+<br />
+<button onclick="parseTags()">See result</button>
+<div id="result"></div>
+<script>
+        function parseTags() {
+            var inUpTag = false,
+                inDownTag = false,
+                inMixCaseTag = false,
+                inTag = false,
+                parsed = '',
+                text = document.getElementById('text').value;
+
+            for(var i = 0; i < text.length; i++) {
+
+                if(text[i] === '<') {
+
+                    if(inTag) {
+                        inTag = false;
+                        inUpTag = false;
+                        inDownTag = false;
+                        inMixCaseTag = false;
+
+                        i = text.indexOf('>',i);
+
+                        continue;
+                    }
+
+                    inTag = true;
+
+                    var currentTag = text.substr(i+1,text.indexOf('>',i) - (i + 1));
+                    i = text.indexOf('>',i);
+
+                    if(currentTag === 'upcase') {
+                        inUpTag = true;
+                    }
+                    else if (currentTag === 'lowcase') {
+                        inDownTag = true;
+                    }
+                    else {
+                        inMixCaseTag = true;
+                    }
+
+                    continue;
+                }
+
+                if(inUpTag) {
+                    parsed += text[i].toUpperCase();
+                    continue;
+                }
+
+                if(inDownTag) {
+                    parsed += text[i].toLowerCase();
+                    continue;
+                }
+
+                if(inMixCaseTag) {
+                    if(Math.random() * 100 < 50) {
+                        parsed += text[i].toUpperCase();
+                    }
+                    else {
+                        parsed += text[i].toLowerCase();
+                    }
+                    continue;
+                }
+
+                parsed += text[i];
+            }
+
+            document.getElementById('result').innerHTML = parsed;
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="text" style="width:500px;height:150px" placeholder="Enter text"></textarea>
+<br />
+<button onclick="getInputAndResult()">See result</button>
+<div id="result"></div>
+
+<script>
+    function getInputAndResult() {
+        var text = document.getElementById('text').value,
+                palindroms = getPalindroms(text),
+                ol = document.createElement('ol');
+
+        for (var i = 0; i < palindroms.length; i++) {
+
+            var li = document.createElement('li');
+            li.innerHTML = palindroms[i];
+            ol.appendChild(li);
+        }
+
+        document.getElementById('result').appendChild(ol);
+        //document.getElementById('result').innerHTML = palindroms.join(' | ');
+    }
+
+    function getPalindroms(text) {
+        var splittedText = text.replace(/\W+/g, ' ').split(' '),
+        palindromes = [];
+
+        for(var i = 0; i < splittedText.length;i++) {
+            if(checkIfPalindrom(splittedText[i])) {
+                palindromes.push(splittedText[i]);
+            }
+        }
+
+        return palindromes;
+    }
+
+    function checkIfPalindrom(word) {
+
+        for(var i = 0; i < word.length /2; i++) {
+
+            if(word[i] !== word[word.length - 1 - i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+</script>
+</body>
+</html>
